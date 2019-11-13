@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { playListInfo } from '../../utils/routes'
 
-const token = 'BQDNboDDO1HoSY4GclX_F0TMzpmWo96DsDZI2XT1zJUfanorW_8skYAmD83Zy3ulqgHDrmpm1T--FJ0LjVlf468J5dduce9gggvugLKMJOgurS3obNFIBWoS8G69POlEp8StgpgulxrKxchMiJIopTto'
-const spotifyPlaylist = '34iESXuSY8PzrCDS7pFkLu'
+const token = 'token'
+const spotifyPlaylist = 'spotifyPlaylist'
 
 class PlayListInfo extends React.Component {
   render() {
