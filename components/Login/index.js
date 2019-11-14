@@ -1,6 +1,6 @@
 import { authEndpoint } from '../../utils/routes'
 
-const clientId = "clientId";
+const clientId = "";
 const redirectUri = "http://localhost:3000/token";
 const scopes = [
   "user-read-currently-playing",
