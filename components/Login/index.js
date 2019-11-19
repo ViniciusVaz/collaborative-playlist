@@ -7,6 +7,8 @@ const scopes = [
   "user-read-playback-state",
 ];
 
+const clientIdDeezer = "380564"
+
 class Login extends React.Component {
   render() {
     return (
@@ -15,6 +17,13 @@ class Login extends React.Component {
           href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=false`}
         >
           Login to Spotify
+        </a>
+        <br/>
+        <br/>
+        <a
+          href={`https://connect.deezer.com/oauth/auth.php?app_id=${clientIdDeezer}&redirect_uri=${redirectUri}&perms=basic_access,email`}
+        >
+          Login to Deezer
         </a>
       </div>
     )
