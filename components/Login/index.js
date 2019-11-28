@@ -20,11 +20,6 @@ class Login extends React.Component {
         </a>
         <br/>
         <br/>
-        <a
-          href={`https://connect.deezer.com/oauth/auth.php?app_id=${clientIdDeezer}&redirect_uri=${redirectUri}&perms=basic_access,email`}
-        >
-          Login to Deezer
-        </a>
       </div>
     )
   }

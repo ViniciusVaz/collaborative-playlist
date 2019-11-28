@@ -6,6 +6,6 @@ export const playListInfoSpotify = `${baseURL}playlists/${spotifyPlaylist}`
 
 // Request Deezer
 const api_key = `ZAIVAHCEISOHWAICUQUEXAEPICENGUAFAEZAIPHAELEEVAHPHUCUFONGUAPASUAY`
-const version = `8.1.0`
+const tokenDeezer = 'fr7301f8eb428df995bb6191dd7411eaf7ed8853'
 
-export const playListInfoDeezer = `https://api.deezer.com/1.0/gateway.php?version=${version}&api_key=${api_key}&output=3&buildId=ios11_universal&screenHeight=480&input=3&sid=frc43e3403521e32bc1325f9f0344c28da4d3de1&lang=br&network=d4a5fab109aa1b498dec92d4e3a85e69d36cc6e995be9e1c48523e9c98aa611e&mobile_tracking=eyJidW5kbGVfaWQiOiJjb20uZGVlemVyLkRlZXplciIsImlkZmEiOiJDNzVCMzkzMS0zM0I0LTQxMkUtQjUzMi1BODRDQjA2NjdEM0YiLCJhZGlkIjoiOWIzODBmM2NiMWJiZTZlODUwMjQxN2EyZjA0ZDM4MWMifQ==&screenWidth=320&method=playlist.getSongs`
+export const baseUrlDeezer = `https://api.deezer.com/1.0/gateway.php?api_key=${api_key}&output=3&input=3&sid=${tokenDeezer}&lang=br`
