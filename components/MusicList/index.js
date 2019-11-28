@@ -3,11 +3,30 @@ import paths from '../../constants/paths'
 import R from 'ramda'
 
 class MusicList extends React.Component {
-  render() {
-    const { name, tracks, player } = this.props
+  constructor(props) {
+    super(props)
+    this.state = {
+      musicList: []
+    }
+  }
+  componentDidMount() {
+    const { player } = this.props
     const musicPath = paths[player].music
-    const musicList = tracks ? tracks[musicPath.prefix] : []
-    
+
+    this.setState({musicPath})
+  }
+  componentDidUpdate(prevProps){
+    const { tracks } = this.props
+    const { musicPath } = this.state
+
+    if(prevProps.tracks !== tracks) {
+      this.setState({musicList: tracks[musicPath.prefix]})
+    }
+  }
+  render() {
+    const { name, player } = this.props
+    const { musicList, musicPath } = this.state
+
     return (
       <section>
         <h3>{name} - {player}</h3>

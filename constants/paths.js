@@ -6,5 +6,8 @@ export default {
       artists: 'track.artists.0.name',
       image: 'track.album.images.0.url'
     }
+  },
+  deezer: {
+    music: {}
   }
 }

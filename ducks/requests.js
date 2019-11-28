@@ -95,7 +95,7 @@ export const fetchData = ({
       },
       ...config,
     }
-    console.log(data)
+    
     if (data) {
       baseConfig = {
         ...baseConfig,
