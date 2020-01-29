@@ -7,7 +7,9 @@ const scopes = [
   "user-read-playback-state",
 ];
 
-const clientIdDeezer = "380564"
+
+
+const clientIdDeezer = "392864"
 
 class Login extends React.Component {
   render() {
@@ -20,6 +22,11 @@ class Login extends React.Component {
         </a>
         <br/>
         <br/>
+        <a
+          href={`https://connect.deezer.com/oauth/auth.php?app_id=${clientIdDeezer}&redirect_uri=${redirectUri}&perms=basic_access,delete_library,manage_library`}
+        >
+          Login to Deezer
+        </a>
       </div>
     )
   }

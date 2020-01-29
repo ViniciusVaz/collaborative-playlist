@@ -2,8 +2,14 @@ import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
 import isClient from './isClient'
-import { loadState } from './storage'
+import { loadState, addToState } from './storage'
 import rootReducer from '../ducks/index'
+
+const persistToken = tokens => {
+	addToState({
+		tokens,
+	})
+}
 
 export default () => {
   const localStorageState = isClient() ? loadState() : {},
@@ -19,13 +25,13 @@ export default () => {
 
   store.subscribe(() => {
     const state = store.getState(),
-      { requests, lead } = state,
+      { requests, tokens } = state,
       appAuth =
         requests.appAuth && !requests.appAuth.isLoading
           ? requests.appAuth
           : null
 
-    // persistAppAuth(appAuth)
+    persistToken(tokens)
   })
 
   return store
