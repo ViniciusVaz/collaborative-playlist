@@ -7,7 +7,7 @@ import { GetSmsToken } from '../../routes/deezer'
 import { fetchData } from '../../ducks/requests'
 import MusicList from '../MusicList'
 
-const token = 'BQB6CvCxvfv5fMwpCtFlU1TWJWUzp0iqdoP1-ZsgXzHxGClsN8tv3nQ4i1F1KGUgo2nWpmvFvL5yCKCq07vW5eHfAcD7-NZRYRrKqbtRqe_6UHyayFQSzuoBJC-7JstWEXO5ksug9e-_feYo7YeqN01R'
+const token = 'BQCXs9y_cGPLUsSLopKuyW8bkKdX7cCAeKvfzY8OQgJGPTlo2x6KCo7aUzmGsFAp_UaPLFwtzIyt2Xn6_t4lLYpuIqwqaSOY05fniyeTkxgl5Lm04b1_UgGqvBa168aTrUuWKrBWkOLD9_wxSg4COu8Z'
 
 class PlayListInfo extends React.Component {
   render() {
