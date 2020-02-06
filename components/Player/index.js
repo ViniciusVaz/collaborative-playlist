@@ -1,3 +1,6 @@
+import { connect } from 'react-redux'
+import { fetchData } from '../../ducks/requests'
+import R from 'ramda'
 import './style.scss'
 
 class Player extends React.Component {
@@ -5,7 +8,21 @@ class Player extends React.Component {
     super(props)
     this.state = {}
   }
+  componentDidMount() {
+    const { player, tokens, dispatch } = this.props
+    
+    const token = R.propOr(false, player, tokens)
 
+    token &&
+      dispatch(
+        fetchData({
+          url: `http://localhost:4004/${player}/playlist`, 
+          key: `playList${player}`, 
+          method: 'POST', 
+          data: {token},
+        })
+      )
+  }
   render() {
     const { connectUrl, player } = this.props
     
@@ -19,4 +36,4 @@ class Player extends React.Component {
   }
 }
 
-export default Player
+export default connect(({ tokens }) => ({tokens}), dispatch => ({dispatch}) )(Player)
