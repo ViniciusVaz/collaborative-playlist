@@ -35,13 +35,14 @@ class Token extends React.Component {
 
           dispatch(addToken({[service]: accessCode}))
           setTimeout( _ => {
-            Router.push('/')
+            window.location.href = '/'
           },100)
         })
     } else {
+      console.log("here")
       dispatch(addToken({[service]: token}))
       setTimeout( _ => {
-        Router.push('/')
+        window.location.href = '/'
       },100)
     }
     

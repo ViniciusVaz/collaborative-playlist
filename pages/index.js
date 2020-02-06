@@ -8,8 +8,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <Player connectUrl={authSpotify} player="spotify"/>
-        <Player connectUrl={authDeezer} player="deezer"/>
+        <Player connectUrl={authSpotify} player="spotify" model="playListspotify"/>
+        <Player connectUrl={authDeezer} player="deezer" model="playListdeezer"/>
       </div>
     )
   }
