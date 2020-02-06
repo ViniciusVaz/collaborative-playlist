@@ -1,0 +1,47 @@
+.player {
+  width: 350px;
+  height: 350px;
+  border: 1px solid black;
+  position: relative;
+  background-color: black;
+  cursor: pointer;
+
+  &:hover {
+    .player__title {
+      text-decoration: underline;
+    }
+  }
+
+  &:first-child {
+    margin-right: 50px;
+  }
+
+  &--spotify {
+    background: url('/static/images/logoSpotify.png') center center no-repeat rgba(0,0,0,0.5);
+    background-size: 200px;
+  }
+
+  &--deezer {
+    background: url('/static/images/logoDeezer.png') center center no-repeat rgba(0,0,0,0.5);
+    background-size: 200px;
+  }
+
+  &__title {
+    color: #fff;
+    z-index: 100;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+  }
+
+  &__overlay {
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+  }
+}

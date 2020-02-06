@@ -3,24 +3,23 @@ import { connect } from 'react-redux'
 import R from 'ramda'
 
 import { fetchData } from '../../ducks/requests'
-import MusicList from '../MusicList'
 
 class PlayListInfo extends React.Component {
   render() {
   
-    const name = R.pathOr('', ['playListSpotify', 'data', 'name'], this.props)
-    const tracks = R.pathOr(null, ['playListSpotify', 'data', 'tracks'], this.props)
+    // const name = R.pathOr('', ['playListSpotify', 'data', 'name'], this.props)
+    // const tracks = R.pathOr(null, ['playListSpotify', 'data', 'tracks'], this.props)
     
     return (
       <div>
-        <h1>PlayList</h1>
-        <MusicList name={name} tracks={tracks} player="spotify"/>
+        {/* <h1>PlayList</h1> */}
+        {/* <MusicList name={name} tracks={tracks} player="spotify"/> */}
         {/* <MusicList name={name} tracks={tracks} player="deezer"/> */}
       </div>
     )
   }
   componentDidMount() {
-    const { dispatch } = this.props
+    // const { dispatch } = this.props
 
 
     // fetch(baseUrlDeezer, {method: 'POST', body: JSON.stringify(dataDeezer),  mode: 'no-cors' }).then(r => console.log(r))

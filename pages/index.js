@@ -1,15 +1,19 @@
 import Login from '../components/Login'
-import PlayListInfo from '../components/PlayListInfo'
+import Player from '../components/Player'
+import { authSpotify, authDeezer } from '../utils/routes'
+
+import './home.scss'
 
 class Home extends React.Component {
   render() {
     return (
-      <>
-        <Login />
-        <PlayListInfo />
-      </>
+      <div className="home">
+        <Player connectUrl={authSpotify} player="spotify"/>
+        <Player connectUrl={authDeezer} player="deezer"/>
+      </div>
     )
   }
 }
 
 export default Home
+
