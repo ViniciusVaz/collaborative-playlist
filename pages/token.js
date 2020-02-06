@@ -4,10 +4,10 @@ import { connect } from 'react-redux'
 import Router from 'next/router'
 import { fetchData } from '../ducks/requests'
 import Link from 'next/link';
-import { clientIdDeezer, secretIdDeezer} from '../constants/config'
+import R from 'ramda'
 
 const regexThirdParty = {
-  spotify: /(?<=access_token=).*(?=&token_type|&expires)/gm,
+  spotify: /(?<=access_token=).*(?=&token_type)/gm,
   deezer: /(?<=code=).*/gm,
 }
 
@@ -29,9 +29,10 @@ class Token extends React.Component {
     const token = asPath.match(regexThirdParty[service])[0]
 
     if(service === 'deezer') {
-      dispatch(fetchData({url: 'http://localhost:4004/authDeezer', data: {token}, key: 'deezerAuth', method:'POST' }))
+      dispatch(fetchData({url: 'http://localhost:4004/deezer/auth', data: {token}, key: 'deezerAuth', method:'POST' }))
         .then(resp => {
-          const accessCode =  resp.data.match(/(?<=access_token=).*(?=&token_type|&expires)/gm)[0]
+          const accessCode = R.pathOr(null, ['data', 'accessToken'], resp)
+
           dispatch(addToken({[service]: accessCode}))
           setTimeout( _ => {
             Router.push('/')
