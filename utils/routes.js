@@ -4,6 +4,9 @@ const redirectUri = "http://localhost:3000/token"
 const scopes = [
   "user-read-currently-playing",
   "user-read-playback-state",
+  "playlist-read-collaborative",
+  "playlist-modify-public",
+  "playlist-modify-private"
 ]
 
 export const authSpotify = `https://accounts.spotify.com/authorize?client_id=${clientIdSpotify}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=false`

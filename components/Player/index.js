@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { fetchData } from '../../ducks/requests'
+import PlaylistInfo from '../PlaylistInfo'
 import R from 'ramda'
 import './style.scss'
 
@@ -19,10 +20,9 @@ class Player extends React.Component {
     token &&
       dispatch(
         fetchData({
-          url: `http://localhost:4004/${player}/playlist`, 
+          url: `http://localhost:4004/${player}/playlist?token=${token}`, 
           key: `playList${player}`, 
-          method: 'POST', 
-          data: {token},
+          method: 'GET',
         })
       )
   }
@@ -61,15 +61,7 @@ class Player extends React.Component {
               })}
             </ul>
           :
-          <>
-            <div onClick={this.backToPlaylist}>  Voltar </div>
-            {
-              player === 'deezer' ?
-              <iframe scrolling="no" frameborder="0" allowTransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=ff0000&layout=dark&size=medium&type=playlist&id=${idCurrentPlaylist}`} width="100%" height="100%"></iframe>
-              :
-              <iframe src={`https://open.spotify.com/embed/playlist/${idCurrentPlaylist}`} width="100%" height="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            }
-          </>
+          <PlaylistInfo idPlaylist={idCurrentPlaylist} player={player} backToPlaylist={this.backToPlaylist}/>
         } 
         
         <a className={`player__overlay`} href={connectUrl}>
